@@ -32,7 +32,7 @@ EOF
 ############################
 # 3️⃣ CREATE ZONE CONFIG
 ############################
-sudo tee /etc/bind/named.conf.local > /dev/null <<EOF
+sudo tee -a /etc/bind/named.conf.local > /dev/null <<EOF
 zone "shine.com" {
     type master;
     file "/etc/bind/db.shine.com";
@@ -121,13 +121,13 @@ sudo systemctl reload apache2
 ############################
 
 # CAFE APP
-cd /home/shine/ai-cafe-project/ai-cafe
+cd /home/kyaw-zin-hein/ai-cafe-project/ai-cafe
 npm install
 npm run build
 PORT=3000 HOST=0.0.0.0 npm start &
 
 # RESTAURANT APP
-cd /home/shine/chinese-restaurant
+cd /home/kyaw-zin-hein/chinese-restaurant
 npm install
 npm run build
 PORT=3001 HOST=0.0.0.0 npm start &
